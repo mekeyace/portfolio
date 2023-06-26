@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>설문조사 - Front, Backend (radio.do)</title>
+</head>
+<body>
+	<form id="frm" method="post" action="./radio.do"
+		enctype="application/x-www-form-urlencoded">
+		<p>[설문조사 - 가장 좋아하는 계절은??]</p>
+		봄 : <input type="radio" name="season" value="봄"><br> 여름 :
+		<input type="radio" name="season" value="여름"><br> 가을 : <input
+			type="radio" name="season" value="가을"><br> 겨울 : <input
+			type="radio" name="season" value="겨울"><br> <input
+			type="button" value="참여하기" onclick="abc()">
+	</form>
+</body>
+<script>
+function abc(){
+	frm.submit();
+}
+</script>
+</html>

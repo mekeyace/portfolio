@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 체크박스1 : 체크시 : Y 미체크시 : N -->
+<form id="frm" method="post" action="./checkok.do">
+<input type="hidden" name="cks" value="N">
+<input type="checkbox" id="agree">동의함
+<input type="button" value="클릭" onclick="abc()">
+
+<div style="font-size:14px; width:150px; border:1px solid red;">예약번호</div>
+<input type="text" class="ins">
+<br>
+</form>
+<!-- 체크박스2 : 체크시 : Y 미체크시 : null -->
+</body>
+<script>
+function abc(){
+	frm.submit();
+}
+</script>
+</html>

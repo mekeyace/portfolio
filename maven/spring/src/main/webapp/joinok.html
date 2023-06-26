@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GET 전송</title>
+</head>
+<body>
+	<form id="frm">
+		<input type="text" name="search"><br> <input
+			type="button" value="검색" onclick="abc()">
+	</form>
+</body>
+<script>
+function abc(){
+	frm.method="post";
+	frm.action="./joinok.do";
+	frm.submit();
+}
+</script>
+</html>

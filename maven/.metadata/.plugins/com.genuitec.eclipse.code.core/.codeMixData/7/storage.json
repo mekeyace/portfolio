@@ -1,0 +1,14 @@
+{
+    "telemetry.machineId": "ff291caa86a4b6f71029d4d81702fb595bc7f5224ddf85471ac0f43f86ea6dc4",
+    "openedPathsList": {
+        "workspaces3": [
+            {
+                "id": "b0ebf3788239763eeef50b443799d3ff",
+                "configURIPath": "file:///e%3A/maven/.metadata/codemix.code-workspace"
+            }
+        ],
+        "files2": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#221a0f"
+}

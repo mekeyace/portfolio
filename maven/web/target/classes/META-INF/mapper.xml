@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+namespace sql 문법에 대한 그룹명
+id값은 중복되면 안됨 <select>,<insert>,<update>,<delete>
+
+${} : 필드명, 테이블
+#{} : 값  bbb = "홍길동";
+
+Database 문법 외에는 사용하지 않습니다.
+
+parameterType : string, int, double
+resultType : 데이터값을 받아올때 사용하는 형태 (select태그 만 사용)
+ -->
+
+<mapper namespace="noticeDB">
+
+<select id="select1" parameterType="string" resultType="Noticevo">
+select * from notice where nidx=#{value}
+</select>
+
+<select id="select2" parameterType="string" resultType="Noticevo">
+select * from notice where nidx like #{value}
+</select>
+
+<select id="selectall" resultType="Noticevo">
+select * from notice order by nidx desc
+</select>
+<!-- 필드명 데이터 적용하는 이름이 동일하게 사용합니다. -->
+<insert id="datainsert">
+insert into notice (nidx,nsubject,nwriter,npass,ntext,ndate)
+values ('0',#{nsubject},#{nwriter},#{npass},#{ntext},default)
+</insert>
+
+<!-- 데이터 수정 update -->
+<update id="dataupdate">
+update notice set nsubject=#{nsubject}, nwriter=#{nwriter}, npass=#{npass}
+,ntext=#{ntext} where nidx=#{nidx}
+</update>
+
+<!-- 데이터 삭제 -->
+<delete id="datadelete">
+delete from notice where nidx=#{nidx}
+</delete>
+
+</mapper>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>펜션 예약시스템</title>
+</head>
+<body>
+	<form id="frm">
+		<p>지역</p>
+		<input type="radio" name="p_area" value="설악산"> 설악산<br> <input
+			type="radio" name="p_area" value="북한산"> 북한산<br> <input
+			type="radio" name="p_area" value="계룡산"> 계룡산<br>
+		<p>지역명</p>
+		<input type="radio" name="p_name" value="백운동"> 백운동<br> <input
+			type="radio" name="p_name" value="삼정"> 삼정<br> <input
+			type="radio" name="p_name" value="치인"> 치인<br>
+		<p>예약자명</p>
+		예약자 이름 : <input type="text" name="p_reserv"><br>
+		<p>이메일주소</p>
+		예약자 이메일 : <input type="text" name="p_email"><br>
+		<p>인원수</p>
+		인원수 : <select name="p_person">
+			<option value="1">1명</option>
+			<option value="2">2명</option>
+			<option value="3">3명</option>
+			<option value="4">4명</option>
+			<option value="5">5명</option>
+		</select> <br>
+		<button type="button" onclick="oksign()">예약하기</button>
+	</form>
+</body>
+<script>
+function oksign(){
+	frm.method="post";
+	frm.action="pensionok.do";
+	frm.submit();
+}
+
+</script>
+</html>

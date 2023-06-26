@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- bean : 각각의 객체 class를 말함 beans : 하나의 class에 여러개의 각각 객체을 읽어들임 xmlns : 
+	xml에 네임서버 경로를 수정해야함 context : 여러개의 경로를 사용할 수 있도록 하는 속성값 -->
+<beans:beans
+	xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc
+		https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- @를 이용하여 핸들링 하기 위한 태그 -->
+	<!-- <annotation-driven></annotation-driven> -->
+	<annotation-driven />
+	<resources location="/" mapping="/**"></resources>
+	<resources location="/css" mapping="/**"></resources>
+	<resources location="/js" mapping="/**"></resources>
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/"></beans:property>
+		<beans:property name="suffix" value=".jsp"></beans:property>
+	</beans:bean>
+	<!-- controller 페이지 로드 -->
+	<beans:bean class="spring.webpage"></beans:bean>
+
+	<!-- 파일 업로드 기능추가 -->
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="defaultEncoding" value="utf-8"></beans:property>
+		<!-- 1024 * 1024 * 2 -->
+		<beans:property name="maxUploadSize" value="2097152"></beans:property>
+	</beans:bean>
+
+
+</beans:beans>

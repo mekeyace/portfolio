@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form id="frm" method="post" action="./fileupok.do" enctype="multipart/form-data">
+파일첨부 : <input type="file" name="mfile2"><br>
+<input type="button" value="파일 업로드" onclick="upok()">
+</form>
+</body>
+<script>
+function upok(){
+	frm.submit();
+}
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+package web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class loginok extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+    public loginok() {
+        super();
+       
+    }
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html");
+		String mid = request.getParameter("mid");
+		String muser = "홍길동";
+		PrintWriter pw = null;
+		try {
+		HttpSession se = request.getSession();
+		se.setAttribute("mid", mid);
+		pw = response.getWriter();
+		pw.print("<script>"
+				+ "alert('로그인 하셨습니다.');"
+				+ "location.href='./admin_main.do';"
+				+ "</script>");
+		}
+		catch(Exception se) {
+			
+		}
+	}
+
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 글쓰기</title>
+<script src="./ckeditor/ckeditor.js?v=9"></script>
+</head>
+<body>
+	<form id="frm">
+		제목 : <input type="text" name="nsubject"><br> 글쓴이 : <input
+			type="text" name="nwriter"><br> 패스워드 : <input
+			type="password" name="npass"><br> 내용 :
+		<textarea name="ntext" id="ntext"></textarea>
+		<br> <input type="button" value="글쓰기" onclick="write2()">
+	</form>
+	<script>
+CKEDITOR.replace("ntext");
+
+function write2(){
+	//내용 입력사항 체크
+	var text = CKEDITOR.instances.ntext.getData();
+	
+	if(frm.nsubject.value==""){
+		alert("제목을 입력하세요");
+		frm.nsubject.focus();
+	}
+	else if(text==""){
+		alert("내용을 입력하세요");
+	}
+	else{
+		frm.method="post";
+		frm.action="notice_writeok.do";
+		frm.submit();
+	}
+}
+</script>
+</body>
+</html>

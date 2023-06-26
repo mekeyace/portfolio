@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Spring 1일차 - Front</title>
+<link rel="stylesheet" type="text/css" href="./css/index2.css?v=1">
+</head>
+<body>
+
+	<form id="f">
+		<input type="text" name="userid"><br> <input type="text"
+			name="username"><br> <input type="button" value="전송"
+			onclick="abc()" class="btn">
+	</form>
+</body>
+<!-- 
+<script src="./js/index2.js"></script>
+ -->
+<script>
+ function abc(){
+	 f.method="post";
+	 f.action="./index.do";
+	 f.submit();
+ }
+ 
+ </script>
+
+</html>

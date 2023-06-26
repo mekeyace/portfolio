@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- spring 사이트에 Container Overview 예시에 있는 코드를 가져옴 mvc는 기본으로 제공하지 않음 mvc를 
+	사용하는 이유는 정적페이지를 로드 하지못함(spring) html, css, js 작동불능 입니다. 단, mvc beans에 추가시 
+	mvc 태그를 이용하여 정적 페이지를 로드 할 수 있음 bean : IOC (제어) 즉, 관리 위임이 없을 경우 제어권 자체가 없으므로 
+	페이지를 로드 하지 않음 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc
+		https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- id : 웹페이지명 class : java 패키지명 + class 이름을 적용함 -->
+	<!-- html은 bean을 생성하지 않으면 출력을 하지 않습니다 -->
+	<bean id="/index.do" class="spring.index">
+	</bean>
+
+	<!-- Controller에서 해당 이름을 적용시 자동으로 해당 이름에 맞는 jsp를 연결하는 속성 코드 입니다. -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+
+	<!-- mvc:resources : 전자정부프레임워크 및 정적페이지 핸들링 파트 location : 웹 디렉토리 mapping 
+		: 파일 속성명을 말합니다. -->
+	<mvc:resources location="/" mapping="/*.html"></mvc:resources>
+	<mvc:resources location="/css/" mapping="/css/*.css"></mvc:resources>
+	<mvc:resources location="/js/" mapping="/js/*.js"></mvc:resources>
+</beans>

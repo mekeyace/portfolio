@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모바일 전용 사용시 오브젝트 변화 (calc)</title>
+<!-- 340 ~ 580px -->
+<style>
+body { 
+margin: 0;
+padding: 0;
+}
+/* 540px */
+
+/* 가로크기 :340px  -> Object크기 : 300px */
+.mid {
+width : calc(100% - 40px);
+height: 30px;
+box-sizing: border-box;
+}
+.btn{
+width:300px;
+height:30px;
+box-sizing: border-box;
+}
+
+@media screen and (min-width:341px) and (max-width:580px){
+.mid {
+width:540px;
+}
+.btn{
+width:540px;
+}
+}
+
+
+</style>
+</head>
+<body>
+<input type="text" class="mid" placeholder="아이디를 입력하세요"><br>
+<input type="submit" value="로그인" class="btn">
+</body>
+</html>

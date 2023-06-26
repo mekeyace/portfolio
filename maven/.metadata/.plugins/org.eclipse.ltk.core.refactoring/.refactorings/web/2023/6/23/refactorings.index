@@ -1,0 +1,28 @@
+1686124726822	Move 'config.xml' to 'META-INF'
+1686124734165	Move 'mapper.xml' to 'META-INF'
+1686124906220	Move 2 resources to 'WEB-INF'
+1686125020692	Move 2 resources to 'META-INF'
+1686125354788	Delete element
+1686125355957	Delete element
+1686125696922	Rename resource 'config.xml'
+1686125708586	Rename resource 'mapper.xml'
+1686126047442	Rename resource 'mybatisConfig.xml'
+1686126050941	Rename resource 'mybatisMapper.xml'
+1686127013973	Copy file
+1686127184795	Move 'META-INF' to 'WEB-INF'
+1686127203117	Move 'META-INF' to 'webapp'
+1686127224757	Delete element
+1686128181188	Move 'config.xml' to 'js'
+1686128260884	Move 'config.xml' to 'META-INF'
+1686128530584	Rename resource 'config.xml'
+1686128770129	Rename resource 'mybatis-config.xml'
+1686129486822	Move 'config.xml' to 'webapp'
+1686129527108	Move 'mapper.xml' to 'webapp'
+1686129637711	Move 2 resources to 'META-INF'
+1686184062376	Move 'META-INF' to 'resources'
+1686184773110	Delete elements
+1686184952940	Move 'META-INF' to 'webapp'
+1686185118629	Move 'META-INF' to 'resources'
+1686185611567	Delete element
+1686185940236	Delete element
+1686201827234	Delete element

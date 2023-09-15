@@ -6,18 +6,17 @@
 	<body>
 		<form id="f" method="post" action="./loginok.do">
 		아이디 : <input type="text" name="mid"><br>
-		<input type="button" value="중복확인" onclick="abc()">
+		<input type="button" value="중복확인" id="abc">
 		</form>
 	</body>
 	<script>
-		function abc(){
-			if(f.mid.value==""){
-				alert("아이디를 입력하세요");
-			}
-			else{
-				f.submit();
-			}
+	document.querySelector("#abc").addEventlistener("click",function(){
+		if(f.mid.value==""){
+			alert("아이디를 입력하셔야 합니다.");
+		}	
+		else{
+		      f.submit();
 		}
-		
+	});
 	</script>
 </html>

@@ -4,7 +4,20 @@
 		<title>git 셋팅 기본</title>
 	</head>
 	<body>
+		<form id="f" method="post" action="./loginok.do">
 		아이디 : <input type="text" name="mid"><br>
-		<input type="button" value="중복확인">
+		<input type="button" value="중복확인" onclick="abc()">
+		</form>
 	</body>
+	<script>
+		function abc(){
+			if(f.mid.value==""){
+				alert("아이디를 입력하세요");
+			}
+			else{
+				f.submit();
+			}
+		}
+		
+	</script>
 </html>
